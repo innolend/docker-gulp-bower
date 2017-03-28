@@ -12,3 +12,5 @@ RUN npm install -g bower gulp \
  && rm /var/cache/apk/*
 
 ENTRYPOINT /bin/sh
+
+CMD ["/bin/sh"]
