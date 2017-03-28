@@ -1,16 +1,11 @@
-FROM mhart/alpine-node
+# Pull base image.
+FROM node:alpine
 
-RUN apk add --update \
-            build-base \
-            python
+# Install dependencies
+RUN apk add --quiet --no-cache bash git && \
+    yarn global add bower gulp && \
+    yarn cache clean && \
+    rm -rf /var/cache/* /tmp/*
 
-RUN echo -e 'http://dl-cdn.alpinelinux.org/alpine/edge/main\nhttp://dl-cdn.alpinelinux.org/alpine/edge/community\nhttp://dl-cdn.alpinelinux.org/alpine/edge/testing' > /etc/apk/repositories
-RUN apk update
-RUN apk add --no-cache yarn
-
-RUN npm install -g bower gulp \
- && rm /var/cache/apk/*
-
-ENTRYPOINT /bin/sh
-
-CMD ["/bin/sh"]
+# Define working directory.
+WORKDIR /workspace
