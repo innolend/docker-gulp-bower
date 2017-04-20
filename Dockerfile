@@ -1,9 +1,9 @@
 # Pull base image.
-FROM node:alpine
+FROM node:7.9.0-alpine
 
 # Install dependencies
 RUN apk update && \
-    apk add python && \
+    apk add gcc make python && \
     apk add --quiet --no-cache bash git && \
     yarn global add bower gulp && \
     yarn cache clean && \
