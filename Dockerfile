@@ -11,4 +11,4 @@ RUN apk update && \
     rm -rf /var/cache/* /tmp/*
 
 # Define working directory.
-WORKDIR /workspace
+WORKDIR /opt/projects
