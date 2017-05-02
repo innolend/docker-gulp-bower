@@ -12,7 +12,7 @@ RUN apk add --no-cache --virtual .build-deps \
     wget https://yarnpkg.com/latest.tar.gz && \
     tar zvxf latest.tar.gz && \
     ln -s /usr/local/bin/dist/bin/yarn.js /usr/local/bin/yarn.js && \
-    apk del .build-deps && mkdir /opt && mkdir /opt/project
+    apk del .build-deps && mkdir /opt && mkdir /opt/project && apk add --no-cache python && npm i -g mkdirp@latest gulp node-sass && npm link node-sass
 
 ENV LIBSASS_VERSION=3.3.1 SASSC_VERSION=3.3.1
 
