@@ -10,7 +10,7 @@ RUN apk update && \
     yarn global add bower gulp && \
     yarn cache clean && \
     yarn add --force node-sass && \
-    rm -rf /var/cache/* /tmp/* && mkdir /opt/offline && \
+    rm -rf /var/cache/* /tmp/* && mkdir /opt && mkdir /opt/offline && \
     cd /opt/offline && wget -i /opt/packages.list && \
     yarn config set yarn-offline-mirror /opt/offline && \
     yarn config set yarn-offline-mirror-pruning true
