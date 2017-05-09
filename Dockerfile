@@ -12,8 +12,7 @@ RUN apk update && \
     yarn add --force node-sass && \
     rm -rf /var/cache/* /tmp/* && mkdir /opt/offline && \
     cd /opt/offline && wget -i /opt/packages.list && \
-    yarn config set yarn-offline-mirror /opt/offline && \
-    yarn config set yarn-offline-mirror-pruning true
+    yarn config set yarn-offline-mirror /opt/offline
 
 # Define working directory.
 WORKDIR /opt/project
